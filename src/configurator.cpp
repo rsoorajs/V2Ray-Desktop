@@ -10,7 +10,7 @@
 #include <QStandardPaths>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-  #include <QMetaType>
+#include <QMetaType>
 #endif
 
 #include "constants.h"
@@ -175,8 +175,8 @@ void Configurator::setAppConfig(QJsonObject config) {
     } else if (configValue.metaType().id() == QMetaType::QJsonArray) {
       _config[configName] = configValue.toJsonArray();
     } else {
-        qWarning() << "Ignore unknown config item [Name=" << configName
-                   << ", Type=" << configValue.metaType().name() << "]";
+      qWarning() << "Ignore unknown config item [Name=" << configName
+                 << ", Type=" << configValue.metaType().name() << "]";
     }
 #else
     switch (configValue.type()) {
